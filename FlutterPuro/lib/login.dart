@@ -85,4 +85,3 @@ class Login extends StatelessWidget {
   }
 }
 
-//NÂO ESTÁ PRONTA!!!, FALTA AJUSTAR O TEXTFIELD E ADICIONAR MAIS UM :)
