@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:cursoflutter/home.dart';
 import 'package:cursoflutter/login.dart';
+import 'package:cursoflutter/cadastro.dart';
+
 
 void main() => runApp(Myapp());
 
@@ -12,8 +14,7 @@ class Myapp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: Home(), // home: Login(),
+      home:cadastro()
     );
   }
 }
-
