@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 export 'package:cursoflutter/cadastro.dart';
 
-class cadastro extends StatelessWidget {
+class Cadastro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -335,7 +335,7 @@ class cadastro extends StatelessWidget {
                                 child: ElevatedButton(
                                   onPressed: () {},
                                   child: Text(
-                                    "Proximo",
+                                    "Próximo",
                                     style: GoogleFonts.oswald(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold,

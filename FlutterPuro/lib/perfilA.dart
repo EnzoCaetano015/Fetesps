@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-export 'package:cursoflutter/perfil.dart';
+export 'package:cursoflutter/perfilA.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Perfil extends StatelessWidget {
@@ -58,7 +58,7 @@ class Perfil extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 15, bottom: 18),
+                      padding: const EdgeInsets.only(left: 24.5, bottom: 18),
                       child: Row(mainAxisSize: MainAxisSize.max, children: [
                         Column(
                           mainAxisSize: MainAxisSize.max,
@@ -160,14 +160,16 @@ class Perfil extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.only(
-                                left: 164,
+                                left: 146.7,
                                 top: 10,
                               ),
-                              child: Icon(
-                                Icons.arrow_forward_ios_outlined,
-                                color: Colors.black,
-                                size: 30,
-                              ),
+                              child: IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(
+                                    Icons.arrow_forward_ios_outlined,
+                                    color: Colors.black,
+                                    size: 30,
+                                  )),
                             ),
                           ],
                         ),
@@ -202,12 +204,14 @@ class Perfil extends StatelessWidget {
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 168, top: 10),
-                              child: Icon(
-                                Icons.arrow_forward_ios_outlined,
-                                color: Colors.black,
-                                size: 30,
-                              ),
+                                  const EdgeInsets.only(left: 150.7, top: 10),
+                              child: IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(
+                                    Icons.arrow_forward_ios_outlined,
+                                    color: Colors.black,
+                                    size: 30,
+                                  )),
                             ),
                           ],
                         ),
@@ -242,12 +246,14 @@ class Perfil extends StatelessWidget {
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 158, top: 10),
-                              child: Icon(
-                                Icons.arrow_forward_ios_outlined,
-                                color: Colors.black,
-                                size: 30,
-                              ),
+                                  const EdgeInsets.only(left: 140.2, top: 10),
+                              child: IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(
+                                    Icons.arrow_forward_ios_outlined,
+                                    color: Colors.black,
+                                    size: 30,
+                                  )),
                             ),
                           ],
                         ),
@@ -280,23 +286,26 @@ class Perfil extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            "*Política de privacidade",
-                            style: GoogleFonts.poppins(
-                              fontSize: 15.0,
-                              color: Color(0xFF572B11),
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration
-                                  .underline, // Adiciona sublinhado ao texto
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              "*Política de privacidade",
+                              style: GoogleFonts.poppins(
+                                fontSize: 15.0,
+                                color: Color(0xFF572B11),
+                                fontWeight: FontWeight.bold,
+                                decoration: TextDecoration
+                                    .underline, // Adiciona sublinhado ao texto
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     )
                   ],
                 ),
