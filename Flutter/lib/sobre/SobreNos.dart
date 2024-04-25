@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
-export 'package:cursoflutter/sobre/Sobre.dart';
+export 'package:cursoflutter/sobre/SobreNos.dart';
 
-class Sobre extends StatelessWidget {
-  const Sobre({super.key});
+class SobreNos extends StatelessWidget {
+  const SobreNos({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +15,7 @@ class Sobre extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.red,
         ),
-        home: DefaultTabController(
-          length: 2,
-          child: Scaffold(
+        home: Scaffold(
             appBar: AppBar(
               title: SizedBox(
                 width: 400,
@@ -503,103 +501,65 @@ class Sobre extends StatelessWidget {
             ),
             body: Padding(
               padding: const EdgeInsets.only(top: 15),
-              child: Column(
-                children: [
-                  Row(
+              child: Column(children: [
+                Row(
+                  children: [
+                    Image.asset('lib/assets/banner 2.png', width: 360)
+                  ],
+                ),
+                Expanded(
+                  child: ListView(
+                    scrollDirection: Axis.vertical,
                     children: [
-                      Image.asset('lib/assets/banner 2.png', width: 360)
-                    ],
-                  ),
-                  const TabBar(
-                    indicatorColor: Color(0xFFFFD35F),
-                    labelColor: Colors.black,
-                    tabs: [
-                      Tab(text: 'Feteps'),
-                      Tab(text: 'Programação'),
-                    ],
-                  ),
-                  Expanded(
-                    child: TabBarView(
-                      children: [
-                        ListView(
-                          scrollDirection: Axis.vertical,
-                          children: [
-                            Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      top: 15, bottom: 15),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Image.asset(
-                                        'lib/assets/estudantes.png',
-                                        width: 315,
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'A Feteps é um evento que reúne\nprojetos desenvolvidos por alunos do\nCentro Paula Souza\ne outras instituições participantes.\nCom projetos inovadores,de\ntransformação social, tecnológicos\n e criativos.\nA diversidade e a qualidade dos\ntrabalhos demonstram a excelência\ndos projetos pedagógicos do ensino médio,\ncursos técnicos de nível médio\ne superior tecnológico.\nA Feteps tem como objetivo desenvolver\n a visão empreendedora, criativa, inovadora\ne científico-tecnológica dos alunos.',
-                                      style: GoogleFonts.poppins(
-                                        fontSize: 15,
-                                        color: Colors.black,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                    )
-                                  ],
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    TextButton(
-                                      onPressed: () {},
-                                      child: Text(
-                                        "Leia Mais",
-                                        style: GoogleFonts.poppins(
-                                          fontSize: 15.0,
-                                          color: const Color(0xFFB6382B),
-                                          fontWeight: FontWeight.bold,
-                                          decoration: TextDecoration
-                                              .underline, // Adiciona sublinhado ao texto
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 20),
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 15),
+                          decoration: const BoxDecoration(
+                            border: Border(
+                              bottom: BorderSide(
+                                  color: Colors.black38,
+                                  width: 1), // Define a linha de borda inferior
                             ),
-                          ],
-                        ), // Conteúdo da primeira guia
-                        ListView(
-                          scrollDirection: Axis.vertical,
-                          children: [
-                            Column(children: [
-                              Padding(
-                                padding: const EdgeInsets.only(top: 15),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Image.asset(
-                                      'lib/assets/calendario.jpg',
-                                      width: 315,
-                                    )
-                                  ],
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Sobre Nós',
+                                style: GoogleFonts.poppins(
+                                  fontSize: 20.0,
+                                  color: const Color(0xFF0E414F),
+                                  fontWeight: FontWeight.bold,
                                 ),
-                              ),
-                            ]),
-                          ],
-                        ), // Conteúdo da segunda guia
-                      ],
-                    ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Somos um grupo de alunos\ndedicados  e inovadores que uniram\nsuas paixões pela tecnologia e\neducação. Movidos pelo desejo de\nfazer a diferença, \ndesenvolvemos um aplicativo\npara a Feira Tecnológica\ndo Estado de São Paulo (Feteps).\nNossa jornada foi marcada por colaboração,\naprendizado e superação de desafios.\nEste aplicativo é o resultado\n do nosso comprometimento\nem proporcionar uma\nexperiência única aos participantes\n da Feteps, conectando pessoas,\nideias e tecnologia. Estamos orgulhosos\nde contribuir para o sucesso\ndeste evento e ansiosos para compartilhar\nessa jornada emocionante com vocês.',
+                            style: GoogleFonts.poppins(
+                              fontSize: 15,
+                              color: Colors.black,
+                            ),
+                            textAlign: TextAlign.center,
+                          )
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset('lib/assets/alunos.png', width: 254,)
+                        ],
+                      )
+                    ],
                   ),
-                ],
-              ),
-            ),
-          ),
-        ));
+                )
+              ]),
+            )));
   }
 }
