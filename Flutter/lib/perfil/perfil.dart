@@ -4,6 +4,8 @@ export 'package:cursoflutter/perfil/perfil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AtualizarDados extends StatelessWidget {
+  const AtualizarDados({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,7 +23,7 @@ class AtualizarDados extends StatelessWidget {
                 children: [
                   IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.arrow_back_sharp,
                         color: Color(0xFF0E414F),
                       )),
@@ -37,180 +39,177 @@ class AtualizarDados extends StatelessWidget {
               ),
             ),
           ),
-          body: Container(
-            child: ListView(scrollDirection: Axis.vertical, children: [
-              Column(
-                children: [
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(top: 25, left: 29, bottom: 25),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Atualizar dados",
-                          style: GoogleFonts.poppins(
-                            fontSize: 24.0,
-                            color: Color(0xFF0E414F),
-                            fontWeight: FontWeight.bold,
+          body: ListView(scrollDirection: Axis.vertical, children: [
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 25, left: 29, bottom: 25),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Atualizar dados",
+                        style: GoogleFonts.poppins(
+                          fontSize: 24.0,
+                          color: const Color(0xFF0E414F),
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'lib/assets/user.png',
+                        width: 170,
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: 305,
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            labelText: 'Email:',
+                            labelStyle: GoogleFonts.poppins(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            border: const UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.black)),
                           ),
-                          textAlign: TextAlign.center,
-                        )
-                      ],
-                    ),
+                        ),
+                      )
+                    ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'lib/assets/user.png',
-                          width: 170,
-                        )
-                      ],
-                    ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: 305,
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            labelText: 'Estado:',
+                            labelStyle: GoogleFonts.poppins(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            border: const UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.black)),
+                          ),
+                        ),
+                      )
+                    ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 305,
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              labelText: 'Email:',
-                              labelStyle: GoogleFonts.poppins(
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: 305,
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            labelText: 'Cidade:',
+                            labelStyle: GoogleFonts.poppins(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            border: const UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.black)),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 30),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: 305,
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            labelText: 'Instituição:',
+                            labelStyle: GoogleFonts.poppins(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            border: const UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.black)),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 25),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 250,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15.0),
+                          gradient: const LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [Color(0xFFFFD35F), Color(0xFF572B11)],
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 3.5, right: 4),
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              minimumSize: const Size(100, 39),
+                              backgroundColor: Colors.white,
+                              shadowColor: Colors.transparent,
+                              elevation: 0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                                side: const BorderSide(
+                                    color: Colors.transparent, width: 0),
+                              ),
+                            ),
+                            child: Text(
+                              "Atualizar",
+                              style: GoogleFonts.poppins(
                                 color: Colors.black,
-                                fontSize: 16,
                                 fontWeight: FontWeight.bold,
-                              ),
-                              border: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.black)),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 305,
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              labelText: 'Estado:',
-                              labelStyle: GoogleFonts.poppins(
-                                color: Colors.black,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              border: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.black)),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 305,
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              labelText: 'Cidade:',
-                              labelStyle: GoogleFonts.poppins(
-                                color: Colors.black,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              border: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.black)),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 30),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 305,
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              labelText: 'Instituição:',
-                              labelStyle: GoogleFonts.poppins(
-                                color: Colors.black,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              border: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.black)),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 25),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 250,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15.0),
-                            gradient: LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              colors: [Color(0xFFFFD35F), Color(0xFF572B11)],
-                            ),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 3.5, right: 4),
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              child: Text(
-                                "Atualizar",
-                                style: GoogleFonts.poppins(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16.0,
-                                ),
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                minimumSize: Size(100, 39),
-                                backgroundColor: Colors.white,
-                                shadowColor: Colors.transparent,
-                                elevation: 0,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  side: BorderSide(
-                                      color: Colors.transparent, width: 0),
-                                ),
+                                fontSize: 16.0,
                               ),
                             ),
                           ),
                         ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ]),
-          ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ]),
         ));
   }
 }

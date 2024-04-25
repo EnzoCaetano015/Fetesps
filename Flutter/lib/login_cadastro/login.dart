@@ -3,6 +3,8 @@ export 'package:cursoflutter/login_cadastro/login.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Login extends StatelessWidget {
+  const Login({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,7 +22,7 @@ class Login extends StatelessWidget {
                 children: [
                   IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.arrow_back_sharp,
                         color: Color(0xFF0E414F),
                       )),
@@ -36,8 +38,7 @@ class Login extends StatelessWidget {
               ),
             ),
           ),
-          body: Container(
-              child: ListView(
+          body: ListView(
             scrollDirection: Axis.vertical,
             children: [
               Column(
@@ -51,7 +52,7 @@ class Login extends StatelessWidget {
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(
-                                color: Color(0xFFB6382B),
+                                color: const Color(0xFFB6382B),
                                 width: 3.5,
                               )),
                           child: ClipOval(
@@ -73,7 +74,7 @@ class Login extends StatelessWidget {
                           "LOGIN",
                           style: GoogleFonts.roboto(
                               fontSize: 25.0,
-                              color: Color(0xFF572B11),
+                              color: const Color(0xFF572B11),
                               fontWeight: FontWeight.bold),
                           textAlign: TextAlign.center,
                         )
@@ -87,7 +88,7 @@ class Login extends StatelessWidget {
                         children: [
                           Expanded(
                               child: Align(
-                            alignment: AlignmentDirectional(0, 04),
+                            alignment: const AlignmentDirectional(0, 04),
                             child: Container(
                               width: 280.0,
                               height: 45.5,
@@ -97,7 +98,7 @@ class Login extends StatelessWidget {
                                     color: Colors.black.withOpacity(0.5),
                                     spreadRadius: 2,
                                     blurRadius: 3,
-                                    offset: Offset(0, 3),
+                                    offset: const Offset(0, 3),
                                   ),
                                 ],
                                 borderRadius: BorderRadius.circular(8),
@@ -117,11 +118,12 @@ class Login extends StatelessWidget {
                                       fontWeight: FontWeight.w500,
                                       fontSize: 16.0),
                                   enabledBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.black),
+                                    borderSide:
+                                        const BorderSide(color: Colors.black),
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Color(0x68D8D8D8),
                                       width: 20,
                                     ),
@@ -131,7 +133,7 @@ class Login extends StatelessWidget {
                                   fillColor:
                                       const Color.fromARGB(255, 77, 99, 111),
                                 ),
-                                style: TextStyle(color: Colors.white),
+                                style: const TextStyle(color: Colors.white),
                                 textAlign: TextAlign.justify,
                               ),
                             ),
@@ -145,7 +147,7 @@ class Login extends StatelessWidget {
                       children: [
                         Expanded(
                             child: Align(
-                          alignment: AlignmentDirectional(0, 04),
+                          alignment: const AlignmentDirectional(0, 04),
                           child: Container(
                             width: 280.0,
                             height: 45.5,
@@ -155,7 +157,7 @@ class Login extends StatelessWidget {
                                   color: Colors.black.withOpacity(0.5),
                                   spreadRadius: 2,
                                   blurRadius: 3,
-                                  offset: Offset(0, 3),
+                                  offset: const Offset(0, 3),
                                 ),
                               ],
                               borderRadius: BorderRadius.circular(8),
@@ -175,11 +177,12 @@ class Login extends StatelessWidget {
                                     fontWeight: FontWeight.w500,
                                     fontSize: 16.0),
                                 enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.black),
+                                  borderSide:
+                                      const BorderSide(color: Colors.black),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Color(0x68D8D8D8),
                                     width: 20,
                                   ),
@@ -189,7 +192,7 @@ class Login extends StatelessWidget {
                                 fillColor:
                                     const Color.fromARGB(255, 77, 99, 111),
                               ),
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                               textAlign: TextAlign.justify,
                             ),
                           ),
@@ -204,7 +207,7 @@ class Login extends StatelessWidget {
                         width: 140,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(25.0),
-                          gradient: LinearGradient(
+                          gradient: const LinearGradient(
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                             colors: [Color(0xFFFFD35F), Color(0xFF572B11)],
@@ -214,23 +217,23 @@ class Login extends StatelessWidget {
                           padding: const EdgeInsets.only(left: 3.5, right: 4),
                           child: ElevatedButton(
                             onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              minimumSize: const Size(100, 39),
+                              backgroundColor: Colors.white,
+                              shadowColor: Colors.transparent,
+                              elevation: 0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50.0),
+                                side: const BorderSide(
+                                    color: Colors.transparent, width: 0),
+                              ),
+                            ),
                             child: Text(
                               "Confirmar",
                               style: GoogleFonts.oswald(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16.0,
-                              ),
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              minimumSize: Size(100, 39),
-                              backgroundColor: Colors.white,
-                              shadowColor: Colors.transparent,
-                              elevation: 0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(50.0),
-                                side: BorderSide(
-                                    color: Colors.transparent, width: 0),
                               ),
                             ),
                           ),
@@ -241,7 +244,7 @@ class Login extends StatelessWidget {
                 ],
               ),
             ],
-          )),
+          ),
         ));
   }
 }

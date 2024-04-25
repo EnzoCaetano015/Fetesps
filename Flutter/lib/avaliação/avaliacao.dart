@@ -37,10 +37,13 @@ class Avaliacao extends StatelessWidget {
               Builder(
                 builder: (BuildContext context) {
                   return IconButton(
-                    icon: const Icon(
-                      Icons.menu,
-                      size: 35,
-                      color: Color(0xFF0E414F),
+                    icon: const Padding(
+                       padding: EdgeInsets.only(top: 9.5),
+                      child: Icon(
+                        Icons.menu,
+                        size: 35,
+                        color: Color(0xFF0E414F),
+                      ),
                     ),
                     onPressed: () {
                       Scaffold.of(context).openEndDrawer();
@@ -55,13 +58,16 @@ class Avaliacao extends StatelessWidget {
               children: [
                 Expanded(
                   child: Container(
-                    color: Color(0xFFF5F5F5),
+                    color: const Color(0xFFF5F5F5),
                     child: ListView(
                       children: <Widget>[
                         SizedBox(
                           height: 112,
                           child: DrawerHeader(
                             decoration: const BoxDecoration(
+                               border: Border(
+                              bottom: BorderSide.none, 
+                            ),
                               color: Color(0xFFF5F5F5),
                             ),
                             child: Builder(builder: (BuildContext context) {
@@ -83,11 +89,11 @@ class Avaliacao extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.symmetric(horizontal: 10),
-                          decoration: BoxDecoration(
+                          margin: const EdgeInsets.symmetric(horizontal: 10),
+                          decoration: const BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
-                                  color: Colors.black,
+                                  color: Colors.black38,
                                   width: 1), // Define a linha de borda inferior
                             ),
                           ),
@@ -115,11 +121,11 @@ class Avaliacao extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.symmetric(horizontal: 10),
-                          decoration: BoxDecoration(
+                          margin: const EdgeInsets.symmetric(horizontal: 10),
+                          decoration: const BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
-                                  color: Colors.black,
+                                  color: Colors.black38,
                                   width: 1), // Define a linha de borda inferior
                             ),
                           ),
@@ -138,7 +144,7 @@ class Avaliacao extends StatelessWidget {
                             ), // Item do menu
                             onTap: () {},
                             trailing: IconButton(
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.arrow_forward_ios_outlined,
                                 color: Colors.black,
                               ),
@@ -147,11 +153,11 @@ class Avaliacao extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.symmetric(horizontal: 10),
-                          decoration: BoxDecoration(
+                          margin: const EdgeInsets.symmetric(horizontal: 10),
+                          decoration: const BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
-                                  color: Colors.black,
+                                  color: Colors.black38,
                                   width: 1), // Define a linha de borda inferior
                             ),
                           ),
@@ -179,16 +185,16 @@ class Avaliacao extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.symmetric(horizontal: 10),
-                          decoration: BoxDecoration(
+                          margin: const EdgeInsets.symmetric(horizontal: 10),
+                          decoration: const BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
-                                  color: Colors.black,
+                                  color: Colors.black38,
                                   width: 1), // Define a linha de borda inferior
                             ),
                           ),
                           child: ListTile(
-                            leading: Icon(
+                            leading: const Icon(
                               Icons.business,
                               color: Colors.black,
                               size: 35,
@@ -202,7 +208,7 @@ class Avaliacao extends StatelessWidget {
                             ), // Item do menu
                             onTap: () {},
                             trailing: IconButton(
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.arrow_forward_ios_outlined,
                                 color: Colors.black,
                               ),
@@ -211,16 +217,16 @@ class Avaliacao extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.symmetric(horizontal: 10),
-                          decoration: BoxDecoration(
+                          margin: const EdgeInsets.symmetric(horizontal: 10),
+                          decoration: const BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
-                                  color: Colors.black,
+                                  color: Colors.black38,
                                   width: 1), // Define a linha de borda inferior
                             ),
                           ),
                           child: ListTile(
-                            leading: Icon(
+                            leading: const Icon(
                               Icons.calendar_today,
                               color: Colors.black,
                               size: 35,
@@ -234,7 +240,7 @@ class Avaliacao extends StatelessWidget {
                             ), // Item do menu
                             onTap: () {},
                             trailing: IconButton(
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.arrow_forward_ios_outlined,
                                 color: Colors.black,
                               ),
@@ -243,16 +249,16 @@ class Avaliacao extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.symmetric(horizontal: 10),
-                          decoration: BoxDecoration(
+                          margin: const EdgeInsets.symmetric(horizontal: 10),
+                          decoration: const BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
-                                  color: Colors.black,
+                                  color: Colors.black38,
                                   width: 1), // Define a linha de borda inferior
                             ),
                           ),
                           child: ListTile(
-                            leading: Icon(
+                            leading: const Icon(
                               Icons.place,
                               color: Colors.black,
                               size: 35,
@@ -266,7 +272,7 @@ class Avaliacao extends StatelessWidget {
                             ), // Item do menu
                             onTap: () {},
                             trailing: IconButton(
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.arrow_forward_ios_outlined,
                                 color: Colors.black,
                               ),
@@ -275,16 +281,16 @@ class Avaliacao extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.symmetric(horizontal: 10),
-                          decoration: BoxDecoration(
+                          margin: const EdgeInsets.symmetric(horizontal: 10),
+                          decoration: const BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
-                                  color: Colors.black,
+                                  color: Colors.black38,
                                   width: 1), // Define a linha de borda inferior
                             ),
                           ),
                           child: ListTile(
-                            leading: Icon(
+                            leading: const Icon(
                               Icons.mic_none,
                               color: Colors.black,
                               size: 35,
@@ -298,7 +304,7 @@ class Avaliacao extends StatelessWidget {
                             ), // Item do menu
                             onTap: () {},
                             trailing: IconButton(
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.arrow_forward_ios_outlined,
                                 color: Colors.black,
                               ),
@@ -307,16 +313,16 @@ class Avaliacao extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.symmetric(horizontal: 10),
-                          decoration: BoxDecoration(
+                          margin: const EdgeInsets.symmetric(horizontal: 10),
+                          decoration: const BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
-                                  color: Colors.black,
+                                  color: Colors.black38,
                                   width: 1), // Define a linha de borda inferior
                             ),
                           ),
                           child: ListTile(
-                            leading: Icon(
+                            leading: const Icon(
                               Icons.lightbulb,
                               color: Colors.black,
                               size: 35,
@@ -330,7 +336,7 @@ class Avaliacao extends StatelessWidget {
                             ), // Item do menu
                             onTap: () {},
                             trailing: IconButton(
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.arrow_forward_ios_outlined,
                                 color: Colors.black,
                               ),
@@ -339,16 +345,16 @@ class Avaliacao extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.symmetric(horizontal: 10),
-                          decoration: BoxDecoration(
+                          margin: const EdgeInsets.symmetric(horizontal: 10),
+                          decoration: const BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
-                                  color: Colors.black,
+                                  color: Colors.black38,
                                   width: 1), // Define a linha de borda inferior
                             ),
                           ),
                           child: ListTile(
-                            leading: Icon(
+                            leading: const Icon(
                               Icons.group,
                               color: Colors.black,
                               size: 35,
@@ -362,7 +368,7 @@ class Avaliacao extends StatelessWidget {
                             ), // Item do menu
                             onTap: () {},
                             trailing: IconButton(
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.arrow_forward_ios_outlined,
                                 color: Colors.black,
                               ),
@@ -371,16 +377,16 @@ class Avaliacao extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.symmetric(horizontal: 10),
-                          decoration: BoxDecoration(
+                          margin: const EdgeInsets.symmetric(horizontal: 10),
+                          decoration: const BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
-                                  color: Colors.black,
+                                  color: Colors.black38,
                                   width: 1), // Define a linha de borda inferior
                             ),
                           ),
                           child: ListTile(
-                            leading: Icon(
+                            leading: const Icon(
                               Icons.info,
                               color: Colors.black,
                               size: 35,
@@ -394,7 +400,7 @@ class Avaliacao extends StatelessWidget {
                             ), // Item do menu
                             onTap: () {},
                             trailing: IconButton(
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.arrow_forward_ios_outlined,
                                 color: Colors.black,
                               ),
@@ -403,16 +409,16 @@ class Avaliacao extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.symmetric(horizontal: 10),
-                          decoration: BoxDecoration(
+                          margin: const EdgeInsets.symmetric(horizontal: 10),
+                          decoration: const BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
-                                  color: Colors.black,
+                                  color: Colors.black38,
                                   width: 1), // Define a linha de borda inferior
                             ),
                           ),
                           child: ListTile(
-                            leading: Icon(
+                            leading: const Icon(
                               Icons.thumb_up,
                               color: Colors.black,
                               size: 35,
@@ -426,7 +432,7 @@ class Avaliacao extends StatelessWidget {
                             ), // Item do menu
                             onTap: () {},
                             trailing: IconButton(
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.arrow_forward_ios_outlined,
                                 color: Colors.black,
                               ),
@@ -439,15 +445,15 @@ class Avaliacao extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.all(16),
-                  color: Color(0xFFF5F5F5),
+                  padding: const EdgeInsets.all(16),
+                  color: const Color(0xFFF5F5F5),
                   child: Padding(
                     padding: const EdgeInsets.only(top: 10),
                     child: Container(
                       width: 150,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15.0),
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: [Color(0xFFFFD35F), Color(0xFF572B11)],
@@ -457,23 +463,23 @@ class Avaliacao extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 3.5, right: 4),
                         child: ElevatedButton(
                           onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            minimumSize: const Size(100, 39),
+                            backgroundColor: Colors.white,
+                            shadowColor: Colors.transparent,
+                            elevation: 0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                              side: const BorderSide(
+                                  color: Colors.transparent, width: 0),
+                            ),
+                          ),
                           child: Text(
                             "Log-out",
                             style: GoogleFonts.poppins(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
                               fontSize: 16.0,
-                            ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            minimumSize: Size(100, 39),
-                            backgroundColor: Colors.white,
-                            shadowColor: Colors.transparent,
-                            elevation: 0,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              side: BorderSide(
-                                  color: Colors.transparent, width: 0),
                             ),
                           ),
                         ),
@@ -484,8 +490,7 @@ class Avaliacao extends StatelessWidget {
               ],
             ),
           ),
-          body: Container(
-              child: Column(
+          body: Column(
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 90, bottom: 15),
@@ -496,7 +501,7 @@ class Avaliacao extends StatelessWidget {
                       'Digite o código do \nprojeto para avaliar:',
                       style: GoogleFonts.poppins(
                         fontSize: 16.5,
-                        color: Color(0xFF0E414F),
+                        color: const Color(0xFF0E414F),
                         fontWeight: FontWeight.bold,
                       ),
                       textAlign: TextAlign.center,
@@ -507,18 +512,18 @@ class Avaliacao extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
+                  SizedBox(
                     width: 280,
                     child: TextFormField(
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: Color(0xffD9D9D9),
+                        fillColor: const Color(0xffD9D9D9),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.0),
                           borderSide: BorderSide.none,
                         ),
                       ),
-                      style: TextStyle(color: Colors.black),
+                      style: const TextStyle(color: Colors.black),
                       textAlign: TextAlign.center,
                       inputFormatters: [
                         FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
@@ -529,7 +534,7 @@ class Avaliacao extends StatelessWidget {
                 ],
               ),
             ],
-          )),
+          ),
         ));
   }
 }

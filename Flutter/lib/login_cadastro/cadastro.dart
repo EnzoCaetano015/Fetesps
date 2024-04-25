@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 export 'package:cursoflutter/login_cadastro/cadastro.dart';
 
 class Cadastro extends StatelessWidget {
+  const Cadastro({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -11,7 +13,7 @@ class Cadastro extends StatelessWidget {
           primarySwatch: Colors.red,
         ),
         home: Scaffold(
-           appBar: AppBar(
+          appBar: AppBar(
             title: SizedBox(
               width: 400,
               height: 300,
@@ -20,7 +22,7 @@ class Cadastro extends StatelessWidget {
                 children: [
                   IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.arrow_back_sharp,
                         color: Color(0xFF0E414F),
                       )),
@@ -36,8 +38,7 @@ class Cadastro extends StatelessWidget {
               ),
             ),
           ),
-          body: Container(
-              child: ListView(
+          body: ListView(
             scrollDirection: Axis.vertical,
             children: [
               Column(
@@ -51,7 +52,7 @@ class Cadastro extends StatelessWidget {
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(
-                                color: Color(0xFFB6382B),
+                                color: const Color(0xFFB6382B),
                                 width: 3.5,
                               )),
                           child: ClipOval(
@@ -73,7 +74,7 @@ class Cadastro extends StatelessWidget {
                           "CADASTRO",
                           style: GoogleFonts.roboto(
                               fontSize: 25.0,
-                              color: Color(0xFF572B11),
+                              color: const Color(0xFF572B11),
                               fontWeight: FontWeight.bold),
                           textAlign: TextAlign.center,
                         )
@@ -87,7 +88,7 @@ class Cadastro extends StatelessWidget {
                         children: [
                           Expanded(
                               child: Align(
-                            alignment: AlignmentDirectional(0, 04),
+                            alignment: const AlignmentDirectional(0, 04),
                             child: Container(
                               width: 280.0,
                               height: 45.5,
@@ -97,7 +98,7 @@ class Cadastro extends StatelessWidget {
                                     color: Colors.black.withOpacity(0.5),
                                     spreadRadius: 2,
                                     blurRadius: 3,
-                                    offset: Offset(0, 3),
+                                    offset: const Offset(0, 3),
                                   ),
                                 ],
                                 borderRadius: BorderRadius.circular(8),
@@ -117,11 +118,12 @@ class Cadastro extends StatelessWidget {
                                       fontWeight: FontWeight.w500,
                                       fontSize: 16.0),
                                   enabledBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.black),
+                                    borderSide:
+                                        const BorderSide(color: Colors.black),
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Color(0x68D8D8D8),
                                       width: 20,
                                     ),
@@ -131,7 +133,7 @@ class Cadastro extends StatelessWidget {
                                   fillColor:
                                       const Color.fromARGB(255, 77, 99, 111),
                                 ),
-                                style: TextStyle(color: Colors.white),
+                                style: const TextStyle(color: Colors.white),
                                 textAlign: TextAlign.justify,
                               ),
                             ),
@@ -145,7 +147,7 @@ class Cadastro extends StatelessWidget {
                       children: [
                         Expanded(
                             child: Align(
-                          alignment: AlignmentDirectional(0, 04),
+                          alignment: const AlignmentDirectional(0, 04),
                           child: Container(
                             width: 280.0,
                             height: 45.5,
@@ -155,7 +157,7 @@ class Cadastro extends StatelessWidget {
                                   color: Colors.black.withOpacity(0.5),
                                   spreadRadius: 2,
                                   blurRadius: 3,
-                                  offset: Offset(0, 3),
+                                  offset: const Offset(0, 3),
                                 ),
                               ],
                               borderRadius: BorderRadius.circular(8),
@@ -175,11 +177,12 @@ class Cadastro extends StatelessWidget {
                                     fontWeight: FontWeight.w500,
                                     fontSize: 16.0),
                                 enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.black),
+                                  borderSide:
+                                      const BorderSide(color: Colors.black),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Color(0x68D8D8D8),
                                     width: 20,
                                   ),
@@ -189,7 +192,7 @@ class Cadastro extends StatelessWidget {
                                 fillColor:
                                     const Color.fromARGB(255, 77, 99, 111),
                               ),
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                               textAlign: TextAlign.justify,
                             ),
                           ),
@@ -204,7 +207,7 @@ class Cadastro extends StatelessWidget {
                       children: [
                         Expanded(
                             child: Align(
-                          alignment: AlignmentDirectional(0, 04),
+                          alignment: const AlignmentDirectional(0, 04),
                           child: Container(
                             width: 280.0,
                             height: 45.5,
@@ -214,7 +217,7 @@ class Cadastro extends StatelessWidget {
                                   color: Colors.black.withOpacity(0.5),
                                   spreadRadius: 2,
                                   blurRadius: 3,
-                                  offset: Offset(0, 3),
+                                  offset: const Offset(0, 3),
                                 ),
                               ],
                               borderRadius: BorderRadius.circular(8),
@@ -234,11 +237,12 @@ class Cadastro extends StatelessWidget {
                                     fontWeight: FontWeight.w500,
                                     fontSize: 16.0),
                                 enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.black),
+                                  borderSide:
+                                      const BorderSide(color: Colors.black),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Color(0x68D8D8D8),
                                     width: 20,
                                   ),
@@ -248,7 +252,7 @@ class Cadastro extends StatelessWidget {
                                 fillColor:
                                     const Color.fromARGB(255, 77, 99, 111),
                               ),
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                               textAlign: TextAlign.justify,
                             ),
                           ),
@@ -263,7 +267,7 @@ class Cadastro extends StatelessWidget {
                       children: [
                         Expanded(
                             child: Align(
-                          alignment: AlignmentDirectional(0, 04),
+                          alignment: const AlignmentDirectional(0, 04),
                           child: Container(
                             width: 280.0,
                             height: 45.5,
@@ -273,7 +277,7 @@ class Cadastro extends StatelessWidget {
                                   color: Colors.black.withOpacity(0.5),
                                   spreadRadius: 2,
                                   blurRadius: 3,
-                                  offset: Offset(0, 3),
+                                  offset: const Offset(0, 3),
                                 ),
                               ],
                               borderRadius: BorderRadius.circular(8),
@@ -293,11 +297,12 @@ class Cadastro extends StatelessWidget {
                                     fontWeight: FontWeight.w500,
                                     fontSize: 16.0),
                                 enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.black),
+                                  borderSide:
+                                      const BorderSide(color: Colors.black),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Color(0x68D8D8D8),
                                     width: 20,
                                   ),
@@ -307,7 +312,7 @@ class Cadastro extends StatelessWidget {
                                 fillColor:
                                     const Color.fromARGB(255, 77, 99, 111),
                               ),
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                               textAlign: TextAlign.justify,
                             ),
                           ),
@@ -324,7 +329,7 @@ class Cadastro extends StatelessWidget {
                           width: 140,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(25.0),
-                            gradient: LinearGradient(
+                            gradient: const LinearGradient(
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
                               colors: [Color(0xFFFFD35F), Color(0xFF572B11)],
@@ -338,6 +343,17 @@ class Cadastro extends StatelessWidget {
                                     const EdgeInsets.only(left: 3.5, right: 2),
                                 child: ElevatedButton(
                                   onPressed: () {},
+                                  style: ElevatedButton.styleFrom(
+                                    minimumSize: const Size(100, 39),
+                                    backgroundColor: Colors.white,
+                                    shadowColor: Colors.transparent,
+                                    elevation: 0,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(50.0),
+                                      side: const BorderSide(
+                                          color: Colors.transparent, width: 0),
+                                    ),
+                                  ),
                                   child: Text(
                                     "Próximo",
                                     style: GoogleFonts.oswald(
@@ -346,21 +362,10 @@ class Cadastro extends StatelessWidget {
                                       fontSize: 16.0,
                                     ),
                                   ),
-                                  style: ElevatedButton.styleFrom(
-                                    minimumSize: Size(100, 39),
-                                    backgroundColor: Colors.white,
-                                    shadowColor: Colors.transparent,
-                                    elevation: 0,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(50.0),
-                                      side: BorderSide(
-                                          color: Colors.transparent, width: 0),
-                                    ),
-                                  ),
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(right: 5),
+                              const Padding(
+                                padding: EdgeInsets.only(right: 5),
                                 child: Icon(
                                   Icons.arrow_forward_ios_outlined,
                                   color: Colors.white,
@@ -375,7 +380,7 @@ class Cadastro extends StatelessWidget {
                 ],
               ),
             ],
-          )),
+          ),
         ));
   }
 }
