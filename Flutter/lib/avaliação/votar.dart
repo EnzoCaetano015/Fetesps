@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+export 'votar.dart';
 
 class VotarPage extends StatefulWidget {
   final String code;
@@ -12,15 +13,15 @@ class VotarPage extends StatefulWidget {
 
 class _VotarPageState extends State<VotarPage> {
   final Position targetLocation = Position(
-  latitude: -23.696710812089037,
-  longitude: -46.43248099150482,
-  timestamp: DateTime.now(),
-  accuracy: 0.0, // Defina a precisão conforme necessário
-  altitude: 0.0, // Defina a altitude conforme necessário
-  heading: 0.0, // Defina a direção conforme necessário
-  speed: 0.0, // Defina a velocidade conforme necessário
-  speedAccuracy: 0.0, // Defina a precisão da velocidade conforme necessário
-); // Exemplo de coordenadas de localização
+    latitude: -23.696710812089037,
+    longitude: -46.43248099150482,
+    timestamp: DateTime.now(),
+    accuracy: 0.0, // Defina a precisão conforme necessário
+    altitude: 0.0, // Defina a altitude conforme necessário
+    heading: 0.0, // Defina a direção conforme necessário
+    speed: 0.0, // Defina a velocidade conforme necessário
+    speedAccuracy: 0.0, // Defina a precisão da velocidade conforme necessário
+  ); // Exemplo de coordenadas de localização
   bool canChangePage = false;
 
   @override
@@ -40,15 +41,16 @@ class _VotarPageState extends State<VotarPage> {
       return;
     }
 
-    if (permission == LocationPermission.whileInUse || permission == LocationPermission.always) {
-    final Position userLocation = await Geolocator.getCurrentPosition();
-    final double distance = Geolocator.distanceBetween(
-      userLocation.latitude, 
-      userLocation.longitude, 
-      targetLocation.latitude, 
-      targetLocation.longitude,
-    );
-      
+    if (permission == LocationPermission.whileInUse ||
+        permission == LocationPermission.always) {
+      final Position userLocation = await Geolocator.getCurrentPosition();
+      final double distance = Geolocator.distanceBetween(
+        userLocation.latitude,
+        userLocation.longitude,
+        targetLocation.latitude,
+        targetLocation.longitude,
+      );
+
       setState(() {
         canChangePage = distance <= 500;
       });
@@ -61,13 +63,11 @@ class _VotarPageState extends State<VotarPage> {
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
+          onPressed: () {},
         ),
         title: Image.asset(
-          'assets/logo.png', 
-          height: 40.0, 
+          'lib/assets/image 12.png',
+          height: 40.0,
         ),
         centerTitle: true,
       ),
@@ -76,17 +76,19 @@ class _VotarPageState extends State<VotarPage> {
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text(
-            'Avalie o projeto: ${widget.code}',
-            style: TextStyle(fontSize: 25.0),
+              'Avalie o projeto: ${widget.code}',
+              style: TextStyle(fontSize: 25.0),
             ),
           ),
-          _widgetProjeto(context), 
+          _widgetProjeto(context),
           ElevatedButton(
-            onPressed: canChangePage ? () {
-              // Implemente aqui a lógica para mudar de página
-              // Por exemplo:
-              // Navigator.push(context, MaterialPageRoute(builder: (context) => NextPage()));
-            } : null,
+            onPressed: canChangePage
+                ? () {
+                    // Implemente aqui a lógica para mudar de página
+                    // Por exemplo:
+                    // Navigator.push(context, MaterialPageRoute(builder: (context) => NextPage()));
+                  }
+                : null,
             child: Text('Change Page'),
           ),
         ],
@@ -101,7 +103,7 @@ Widget _widgetProjeto(BuildContext context) {
       children: [
         Text(
           'ODS 02: FOME ZERO',
-          style: TextStyle(color: Color.fromRGBO(255,211,95,1)),
+          style: TextStyle(color: Color.fromRGBO(255, 211, 95, 1)),
         ),
       ],
     ),
