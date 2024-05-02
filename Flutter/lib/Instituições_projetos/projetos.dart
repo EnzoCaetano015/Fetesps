@@ -1,174 +1,634 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
+
+final TextStyle interTextStyle = GoogleFonts.inter();
+final TextStyle poppinsTextStyle = GoogleFonts.poppins();
 class Projetos extends StatelessWidget {
+  const Projetos({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false, 
-      home: projetosHome()
-    );
+    return const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          body: projetosHome(),
+        ));
   }
 }
 
-class projetosHome extends StatefulWidget{
-  @override 
+class projetosHome extends StatefulWidget {
+  const projetosHome({super.key});
+
+  @override
   ProjetosHomeState createState() => ProjetosHomeState();
 }
 
-class ProjetosHomeState extends State<projetosHome>{
+class ProjetosHomeState extends State<projetosHome> {
   int _selectedButtonIndex = -1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child:
-          Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+      appBar: AppBar(
+        title: SizedBox(
+          width: 400,
+          height: 300,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                padding: EdgeInsets.all(20.0),
-                alignment: Alignment.center,
-                child: Image.asset('img/logo.png'),
-              ),
-              IconButton(
-                iconSize: 42.0,
-                icon: Icon(Icons.menu), 
-                onPressed: () {},
-              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 15.0, left: 40),
+                child: Image.asset(
+                  'lib/assets/image 12.png',
+                  width: 235,
+                ),
+              )
             ],
           ),
-          Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Text(
-              'Projetos',
-              style: TextStyle(
-                  fontFamily: "Poppins",
-                  fontSize: 36.0,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 14, 56, 70))
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(10.0),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: 'Pesquise um projeto...',
-                hintStyle: TextStyle(color: Colors.grey),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    width: 3.0,
-                    color: Color.fromARGB(255, 255, 209, 64),
-                    style: BorderStyle.solid,
+        ),
+        actions: [
+          Builder(
+            builder: (BuildContext context) {
+              return IconButton(
+                icon: const Padding(
+                  padding: EdgeInsets.only(top: 9.5),
+                  child: Icon(
+                    Icons.menu,
+                    size: 35,
+                    color: Color(0xFF0E414F),
                   ),
                 ),
-                prefixIcon: Icon(Icons.search,
-                    color: Color.fromARGB(255, 255, 209, 64)),
+                onPressed: () {
+                  Scaffold.of(context).openEndDrawer();
+                },
+              );
+            },
+          ),
+        ],
+      ),
+      endDrawer: Drawer(
+        child: Column(
+          children: [
+            Expanded(
+              child: Container(
+                color: const Color(0xFFF5F5F5),
+                child: ListView(
+                  children: <Widget>[
+                    SizedBox(
+                      height: 112,
+                      child: DrawerHeader(
+                        decoration: const BoxDecoration(
+                          color: Color(0xFFF5F5F5),
+                        ),
+                        child: Builder(builder: (BuildContext context) {
+                          return IconButton(
+                              onPressed: () {
+                                Scaffold.of(context).closeEndDrawer();
+                              },
+                              icon: const Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Icon(
+                                    Icons.arrow_back_sharp,
+                                    color: Color(0xFF0E414F),
+                                    size: 45,
+                                  ),
+                                ],
+                              ));
+                        }),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                      decoration: const BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                              color: Colors.black38,
+                              width: 1), // Define a linha de borda inferior
+                        ),
+                      ),
+                      child: ListTile(
+                        leading: const Icon(
+                          Icons.home,
+                          color: Colors.black,
+                          size: 35,
+                        ),
+                        title: Text(
+                          'Home',
+                          style: GoogleFonts.openSans(
+                              color: Colors.black,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold),
+                        ), // Item do menu
+                        onTap: () {},
+                        trailing: IconButton(
+                          icon: const Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: Colors.black,
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                      decoration: const BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                              color: Colors.black38,
+                              width: 1), // Define a linha de borda inferior
+                        ),
+                      ),
+                      child: ListTile(
+                        leading: const Icon(
+                          Icons.person,
+                          color: Colors.black,
+                          size: 35,
+                        ),
+                        title: Text(
+                          'Perfil',
+                          style: GoogleFonts.openSans(
+                              color: Colors.black,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold),
+                        ), // Item do menu
+                        onTap: () {},
+                        trailing: IconButton(
+                          icon: const Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: Colors.black,
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                      decoration: const BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                              color: Colors.black38,
+                              width: 1), // Define a linha de borda inferior
+                        ),
+                      ),
+                      child: ListTile(
+                        leading: const Icon(
+                          Icons.settings,
+                          color: Colors.black,
+                          size: 35,
+                        ),
+                        title: Text(
+                          'Projetos',
+                          style: GoogleFonts.openSans(
+                              color: Colors.black,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold),
+                        ), // Item do menu
+                        onTap: () {},
+                        trailing: IconButton(
+                          icon: const Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: Colors.black,
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                      decoration: const BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                              color: Colors.black38,
+                              width: 1), // Define a linha de borda inferior
+                        ),
+                      ),
+                      child: ListTile(
+                        leading: const Icon(
+                          Icons.business,
+                          color: Colors.black,
+                          size: 35,
+                        ),
+                        title: Text(
+                          'Instituições',
+                          style: GoogleFonts.openSans(
+                              color: Colors.black,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold),
+                        ), // Item do menu
+                        onTap: () {},
+                        trailing: IconButton(
+                          icon: const Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: Colors.black,
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                      decoration: const BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                              color: Colors.black38,
+                              width: 1), // Define a linha de borda inferior
+                        ),
+                      ),
+                      child: ListTile(
+                        leading: const Icon(
+                          Icons.calendar_today,
+                          color: Colors.black,
+                          size: 35,
+                        ),
+                        title: Text(
+                          'Programação',
+                          style: GoogleFonts.openSans(
+                              color: Colors.black,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold),
+                        ), // Item do menu
+                        onTap: () {},
+                        trailing: IconButton(
+                          icon: const Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: Colors.black,
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                      decoration: const BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                              color: Colors.black38,
+                              width: 1), // Define a linha de borda inferior
+                        ),
+                      ),
+                      child: ListTile(
+                        leading: const Icon(
+                          Icons.place,
+                          color: Colors.black,
+                          size: 35,
+                        ),
+                        title: Text(
+                          'Mapa',
+                          style: GoogleFonts.openSans(
+                              color: Colors.black,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold),
+                        ), // Item do menu
+                        onTap: () {},
+                        trailing: IconButton(
+                          icon: const Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: Colors.black,
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                      decoration: const BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                              color: Colors.black38,
+                              width: 1), // Define a linha de borda inferior
+                        ),
+                      ),
+                      child: ListTile(
+                        leading: const Icon(
+                          Icons.mic_none,
+                          color: Colors.black,
+                          size: 35,
+                        ),
+                        title: Text(
+                          'Palestrantes',
+                          style: GoogleFonts.openSans(
+                              color: Colors.black,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold),
+                        ), // Item do menu
+                        onTap: () {},
+                        trailing: IconButton(
+                          icon: const Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: Colors.black,
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                      decoration: const BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                              color: Colors.black38,
+                              width: 1), // Define a linha de borda inferior
+                        ),
+                      ),
+                      child: ListTile(
+                        leading: const Icon(
+                          Icons.lightbulb,
+                          color: Colors.black,
+                          size: 35,
+                        ),
+                        title: Text(
+                          'Curiosidade',
+                          style: GoogleFonts.openSans(
+                              color: Colors.black,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold),
+                        ), // Item do menu
+                        onTap: () {},
+                        trailing: IconButton(
+                          icon: const Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: Colors.black,
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                      decoration: const BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                              color: Colors.black38,
+                              width: 1), // Define a linha de borda inferior
+                        ),
+                      ),
+                      child: ListTile(
+                        leading: const Icon(
+                          Icons.group,
+                          color: Colors.black,
+                          size: 35,
+                        ),
+                        title: Text(
+                          'Patrocinadores',
+                          style: GoogleFonts.openSans(
+                              color: Colors.black,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold),
+                        ), // Item do menu
+                        onTap: () {},
+                        trailing: IconButton(
+                          icon: const Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: Colors.black,
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                      decoration: const BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                              color: Colors.black38,
+                              width: 1), // Define a linha de borda inferior
+                        ),
+                      ),
+                      child: ListTile(
+                        leading: const Icon(
+                          Icons.info,
+                          color: Colors.black,
+                          size: 35,
+                        ),
+                        title: Text(
+                          'Sobre',
+                          style: GoogleFonts.openSans(
+                              color: Colors.black,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold),
+                        ), // Item do menu
+                        onTap: () {},
+                        trailing: IconButton(
+                          icon: const Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: Colors.black,
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                      decoration: const BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                              color: Colors.black38,
+                              width: 1), // Define a linha de borda inferior
+                        ),
+                      ),
+                      child: ListTile(
+                        leading: const Icon(
+                          Icons.thumb_up,
+                          color: Colors.black,
+                          size: 35,
+                        ),
+                        title: Text(
+                          'Avalições',
+                          style: GoogleFonts.openSans(
+                              color: Colors.black,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold),
+                        ), // Item do menu
+                        onTap: () {},
+                        trailing: IconButton(
+                          icon: const Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: Colors.black,
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Text(
-              'ODS:',
-              style: TextStyle(
-                fontFamily: "Inter",
-                  fontSize: 24.0,
-                  color: Color.fromARGB(255, 61, 20, 10),
-                  fontWeight: FontWeight.bold),
-            ),
-          ),
-          SizedBox(height: 2.0),
-          Divider(
-            color: Colors.grey, 
-            thickness: 1.0,
-          ),
-          SizedBox(height: 10.0),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                for(int i = 1; i < 18; i++)
-                  CardWidget(ods: i)
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Text(
-              "ODS 1: Erradicação da Pobreza",
-              style: TextStyle(
-                  fontFamily: "Inter",
-                  fontSize: 32.0,
-                  color: Color.fromARGB(255, 61, 20, 10),
-                  fontWeight: FontWeight.bold),
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              InkWell(
-                onTap: () {
-                  _updateSelectedButton(0);
-                },
+            Container(
+              padding: const EdgeInsets.all(16),
+              color: const Color(0xFFF5F5F5),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 10),
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Text(
-                    'Etec',
-                    style: TextStyle(
-                    fontFamily: "Inter",
-                    fontSize: 20.0,
+                  width: 150,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15.0),
+                    gradient: const LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [Color(0xFFFFD35F), Color(0xFF572B11)],
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 3.5, right: 4),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(100, 39),
+                        backgroundColor: Colors.white,
+                        shadowColor: Colors.transparent,
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          side: const BorderSide(
+                              color: Colors.transparent, width: 0),
+                        ),
+                      ),
+                      child: Text(
+                        "Log-out",
+                        style: GoogleFonts.poppins(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+      body: ListView(
+        children: [
+          Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+            Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Text('Projetos',
+                  style: poppinsTextStyle.copyWith(
+                      fontSize: 36.0,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 14, 56, 70))),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(10.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Pesquise um projeto...',
+                  hintStyle: TextStyle(color: Colors.grey),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 3.0,
+                      color: Color.fromARGB(255, 255, 209, 64),
+                      style: BorderStyle.solid,
+                    ),
+                  ),
+                  prefixIcon: Icon(Icons.search,
+                      color: Color.fromARGB(255, 255, 209, 64)),
+                ),
+              ),
+            ),
+             Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Text(
+                'ODS:',
+                style: interTextStyle.copyWith(
+                    fontSize: 24.0,
                     color: Color.fromARGB(255, 61, 20, 10),
                     fontWeight: FontWeight.bold),
-                  ),
-                  decoration: _selectedButtonIndex == 0
-                      ? BoxDecoration(
-                          border: Border(bottom: BorderSide(color: Color.fromARGB(220, 255, 209, 64), width: 3.0)),
-                        )
-                      : null,
-                ),
               ),
-              SizedBox(width: 60),
-              InkWell(
-                onTap: () {
-                  _updateSelectedButton(1);
-                },
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Text(
-                    'Fatec',
-                    style: TextStyle(
-                    fontFamily: "Inter",
-                    fontSize: 20.0,
+            ),
+            const SizedBox(height: 2.0),
+            const Divider(
+              color: Colors.grey,
+              thickness: 1.0,
+            ),
+            const SizedBox(height: 10.0),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [for (int i = 1; i < 18; i++) CardWidget(ods: i)],
+              ),
+            ),
+             Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Text(
+                "ODS 1: Erradicação da Pobreza",
+                style: interTextStyle.copyWith(
+                    fontSize: 32.0,
                     color: Color.fromARGB(255, 61, 20, 10),
-                    fontWeight: FontWeight.bold),                    
-                  ),
-                  decoration: _selectedButtonIndex == 1
-                      ? BoxDecoration(
-                          border: Border(bottom: BorderSide(color: Color.fromARGB(220, 255, 209, 64), width: 3.0)),
-                        )
-                      : null,
-                ),
+                    fontWeight: FontWeight.bold),
               ),
-            ],
-          ),
-          SizedBox(height: 0),
-          Divider(
-            color: Colors.grey, 
-            thickness: 1.0, 
-          ),
-          SizedBox(height: 10.0),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                for(int i = 1; i < 18; i++)
-                  CardWidget2(ods: 1)
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                InkWell(
+                  onTap: () {
+                    _updateSelectedButton(0);
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
+                    decoration: _selectedButtonIndex == 0
+                        ? const BoxDecoration(
+                            border: Border(
+                                bottom: BorderSide(
+                                    color: Color.fromARGB(220, 255, 209, 64),
+                                    width: 3.0)),
+                          )
+                        : null,
+                    child: Text(
+                      'Etec',
+                      style: interTextStyle.copyWith(
+                          fontSize: 20.0,
+                          color: Color.fromARGB(255, 61, 20, 10),
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 60),
+                InkWell(
+                  onTap: () {
+                    _updateSelectedButton(1);
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
+                    decoration: _selectedButtonIndex == 1
+                        ? const BoxDecoration(
+                            border: Border(
+                                bottom: BorderSide(
+                                    color: Color.fromARGB(220, 255, 209, 64),
+                                    width: 3.0)),
+                          )
+                        : null,
+                    child:  Text(
+                      'Fatec',
+                      style: interTextStyle.copyWith(
+                          fontSize: 20.0,
+                          color: Color.fromARGB(255, 61, 20, 10),
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
               ],
             ),
-          ),
-        ]),
+            const SizedBox(height: 0),
+            const Divider(
+              color: Colors.grey,
+              thickness: 1.0,
+            ),
+            const SizedBox(height: 10.0),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [for (int i = 1; i < 18; i++) CardWidget2(ods: 1)],
+              ),
+            ),
+          ]),
+        ],
       ),
     );
   }
@@ -185,54 +645,54 @@ class CardWidget extends StatelessWidget {
 
   CardWidget({required this.ods});
 
-  static cor(int ods){
-    switch(ods){
+  static cor(int ods) {
+    switch (ods) {
       case 1:
-        return Color.fromARGB(255, 179, 0, 0);
+        return const Color.fromARGB(255, 179, 0, 0);
       case 2:
-        return Color.fromARGB(255, 201, 177, 0);
-      case 3: 
-        return Color.fromARGB(255, 60, 131, 66);
+        return const Color.fromARGB(255, 201, 177, 0);
+      case 3:
+        return const Color.fromARGB(255, 60, 131, 66);
       case 4:
-        return Color.fromARGB(255, 127, 13, 13);
+        return const Color.fromARGB(255, 127, 13, 13);
       case 5:
-        return Color.fromARGB(255, 201, 59, 7);
+        return const Color.fromARGB(255, 201, 59, 7);
       case 6:
-        return Color.fromARGB(255, 22, 149, 199);
+        return const Color.fromARGB(255, 22, 149, 199);
       case 7:
-        return Color.fromARGB(255, 255, 234, 71);
-      case 8:   
-        return Color.fromARGB(255, 88, 3, 27);   
+        return const Color.fromARGB(255, 255, 234, 71);
+      case 8:
+        return const Color.fromARGB(255, 88, 3, 27);
       case 9:
-        return Color.fromARGB(255, 225, 107, 16);
+        return const Color.fromARGB(255, 225, 107, 16);
       case 10:
-        return Color.fromARGB(255, 222, 79, 115);
+        return const Color.fromARGB(255, 222, 79, 115);
       case 11:
-        return Color.fromARGB(255, 225, 162, 16);
+        return const Color.fromARGB(255, 225, 162, 16);
       case 12:
-        return Color.fromARGB(255, 162, 144, 3);
+        return const Color.fromARGB(255, 162, 144, 3);
       case 13:
-        return Color.fromARGB(255, 21, 89, 18);
+        return const Color.fromARGB(255, 21, 89, 18);
       case 14:
-        return Color.fromARGB(255, 12, 107, 186);
+        return const Color.fromARGB(255, 12, 107, 186);
       case 15:
-        return Color.fromARGB(255, 41, 229, 60);
+        return const Color.fromARGB(255, 41, 229, 60);
       case 16:
-        return Color.fromARGB(255, 7, 77, 152);
+        return const Color.fromARGB(255, 7, 77, 152);
       case 17:
-        return Color.fromARGB(255, 31, 27, 88);
+        return const Color.fromARGB(255, 31, 27, 88);
       default:
-        return Color.fromARGB(255, 179, 0, 0);
+        return const Color.fromARGB(255, 179, 0, 0);
     }
   }
 
-  static List<String> texto(int ods){
-    switch(ods){
+  static List<String> texto(int ods) {
+    switch (ods) {
       case 1:
         return ["ODS 1", "Erradicação da Pobreza"];
       case 2:
         return ["ODS 2", "Fome Zero"];
-      case 3: 
+      case 3:
         return ["ODS 3", "Saúde e Bem-Estar"];
       case 4:
         return ["ODS 4", "Educação de Qualidade"];
@@ -242,8 +702,8 @@ class CardWidget extends StatelessWidget {
         return ["ODS 6", "Água Potável e..."];
       case 7:
         return ["ODS 7", "Energia Limpa e Acessível"];
-      case 8:   
-        return ["ODS 8", "Crescimento Ecônomico"];   
+      case 8:
+        return ["ODS 8", "Crescimento Ecônomico"];
       case 9:
         return ["ODS 9", "Indústria e Inovação"];
       case 10:
@@ -277,97 +737,103 @@ class CardWidget extends StatelessWidget {
       _endAlignment,
       0.5,
     ) as AlignmentGeometry;
-    
-    return Padding(
-      padding: const EdgeInsets.all(8.0), 
-      child: SizedBox(
-        height: 180,
-        width: 240,
-        child: GestureDetector(
-            onTap: () {
 
-            },
-          child: Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(15),
-                topRight: Radius.circular(15),
+    return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SizedBox(
+          height: 180,
+          width: 240,
+          child: GestureDetector(
+            onTap: () {},
+            child: Card(
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(15),
+                  topRight: Radius.circular(15),
+                ),
+              ),
+              elevation: 5,
+              child: Stack(
+                children: <Widget>[
+                  Positioned.fill(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(15),
+                          topRight: Radius.circular(15),
+                        ),
+                        border: Border.all(
+                            color: const Color.fromARGB(255, 61, 20, 10),
+                            width: 2),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      child: Container(
+                        padding: const EdgeInsets.all(6),
+                        decoration: BoxDecoration(
+                          color: cor(ods),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Text(
+                          texto(ods)[0],
+                          style: interTextStyle.copyWith(
+                            fontSize: 11,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Align(
+                        alignment: intermediateAlignment,
+                        child: Text(
+                          texto(ods)[1],
+                          style:  interTextStyle.copyWith(
+                            fontSize: 18,
+                            color: Colors.black,
+                          ),
+                        ),
+                      )),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                        height: 100,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              color: const Color.fromARGB(255, 61, 20, 10),
+                              width: 2),
+                        ),
+                        child: SizedBox(
+                          child: Container(
+                              color: cor(ods),
+                              width: double.infinity,
+                              margin: const EdgeInsets.all(0),
+                              padding: const EdgeInsets.all(0),
+                              alignment: Alignment.bottomLeft,
+                              child:  Padding(
+                                padding: const EdgeInsets.all(10),
+                                child: Text(
+                                  "XX Projetos",
+                                  style: interTextStyle.copyWith(
+                                    fontSize: 14,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              )),
+                        )),
+                  ),
+                ],
               ),
             ),
-            elevation: 5,
-            child: Stack(
-              children: <Widget>[
-                Positioned.fill(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        topRight: Radius.circular(15),
-                      ),
-                      border: Border.all(color: Color.fromARGB(255, 61, 20, 10), width: 2),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Container(
-                      padding: EdgeInsets.all(6),
-                      decoration: BoxDecoration(
-                        color: cor(ods),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Text(
-                        texto(ods)[0],
-                        style: TextStyle(fontSize: 11, color: Colors.white, fontFamily: "Inter"),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: Align(
-                    alignment: intermediateAlignment,
-                    child: Text(
-                      texto(ods)[1],
-                      style: TextStyle(fontSize: 18, color: Colors.black, fontFamily: "Inter"),
-                    ),
-                  )
-
-                ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Container(
-                    height: 100,
-                    decoration: BoxDecoration(
-                        border: Border.all(color: Color.fromARGB(255, 61, 20, 10), width: 2),
-                    ),
-                    child: SizedBox(
-                      child: Container(
-                        color: cor(ods),
-                        width: double.infinity,
-                        margin: EdgeInsets.all(0),
-                        padding: EdgeInsets.all(0),
-                        alignment: Alignment.bottomLeft,
-                        child: Padding(
-                          padding: EdgeInsets.all(10),
-                          child: Text(
-                            "XX Projetos",
-                            style: TextStyle(fontSize: 14, color: Colors.white, fontFamily: "Inter"),
-                          ),
-                        )
-                      ),               
-                    )
-                  ),
-                ),
-              ],
-            ),
           ),
-        ),
-      )
-    );
+        ));
   }
 }
 
@@ -379,12 +845,11 @@ class CardWidget2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0), 
+      padding: const EdgeInsets.all(8.0),
       child: Card(
-        color: CardWidget.cor(ods), 
+        color: CardWidget.cor(ods),
         shape: RoundedRectangleBorder(
-          borderRadius:
-              BorderRadius.circular(10.0), 
+          borderRadius: BorderRadius.circular(10.0),
         ),
         child: SizedBox(
           width: 185.0,
@@ -392,25 +857,21 @@ class CardWidget2 extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
-                  height: 10.0), 
-              Image.asset('img/Rectangle.png'),
-              SizedBox(height: 5.0),
-              Text(
+              const SizedBox(height: 10.0),
+              Image.asset('lib/assets/Rectangle.png'),
+              const SizedBox(height: 5.0),
+              const Text(
                 'Nome do projeto',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 14.0,
-                    color: const Color.fromARGB(
-                        255, 0, 0, 0)), 
-              ),
-              SizedBox(height: 3.0),
-              Text(
-                'Participantes',
-                style: TextStyle(
-                    fontFamily: "Poppins",
-                    fontSize: 10.0,
                     color: Color.fromARGB(255, 0, 0, 0)),
+              ),
+              const SizedBox(height: 3.0),
+               Text(
+                'Participantes',
+                style: poppinsTextStyle.copyWith(
+                    fontSize: 10.0, color: Color.fromARGB(255, 0, 0, 0)),
               ),
             ],
           ),
@@ -419,4 +880,3 @@ class CardWidget2 extends StatelessWidget {
     );
   }
 }
-
